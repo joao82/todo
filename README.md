@@ -15,7 +15,7 @@ This repository contains a project built using **HTML5, CSS3, Django, SQLite3 an
 
 ## 📸 Overview
 
-![Screenshot](./todo.gif?raw=true "Todo List")
+![Screenshot](./base/static/images/todo.gif?raw=true "Todo List")
 
 ## 📬 Connect With Me
 
