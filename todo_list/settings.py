@@ -4,12 +4,14 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://django-todo-ogal.onrender.com"]
+# ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://django-todo-ogal.onrender.com"]
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')if RENDER_EXTERNAL_HOSTNAME:    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 
 # Application definition
@@ -69,12 +71,12 @@ WSGI_APPLICATION = 'todo_list.wsgi.application'
 ''' ElephantSQL database'''
 DATABASES = {
   'default': {
-    'ENGINE': os.getenv('ENGINE'),
-    'NAME': os.getenv('NAME'),
-    'USER': os.getenv('USER'),
-    'PASSWORD': os.getenv('PASSWORD'),
-    'HOST': os.getenv('HOST'),
-    'PORT': os.getenv('PORT')
+    'ENGINE': os.environ.get('ENGINE'),
+    'NAME': os.environ.get('NAME'),
+    'USER': os.environ.get('USER'),
+    'PASSWORD': os.environ.get('PASSWORD'),
+    'HOST': os.environ.get('HOST'),
+    'PORT': os.environ.get('PORT')
   }
 }
 
