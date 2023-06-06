@@ -2,7 +2,7 @@
 
 This repository contains a project built using **HTML5, CSS3, Django, SQLite3 and Python**.
 
-## 🔗 Live URL: <a href="https://todo-list-vuxm.onrender.com">Todo App</a>
+## 🔗 Live URL: <a href="https://django-todo-ogal.onrender.com">Todo App</a>
 
 ## 📌 Tech Stack
 
